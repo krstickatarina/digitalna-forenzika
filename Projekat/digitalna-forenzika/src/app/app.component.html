@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="main-header">
+    <filter-bar 
+      [selectedYear]="selectedYear" 
+      [selectedMonth]="selectedMonth"
+      [selectedPeriod]="selectedPeriod"
+      [selectedVisualization]="selectedVisualization"
+      (visualizationOptionChangedEmitter)="visualizationChanged($event)"
+      (periodOptionChangedEmitter)="periodChanged($event)"
+      (yearChangedEmitter)="yearChanged($event)"
+      (monthChangedEmitter)="monthChanged($event)">
+    </filter-bar>
+  </div>
+  <div class="main-content">
+    <graph
+      [userInformation]="userInformation"
+      [visualization]="selectedVisualization"
+      [period]="selectedPeriod"
+      [year]="selectedYear"
+      [month]="selectedMonth"
+    ></graph>
+  </div>
+</div>

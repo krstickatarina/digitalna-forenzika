@@ -1,0 +1,40 @@
+<div class="filter-bar">
+    <div class="filter-bar-wrapper">
+        <div class="filter-bar-wrapper-group">
+            <div class="filter-bar-wrapper-group-label">
+                Visualization:
+            </div>
+            <div class="filter-bar-wrapper-group-radio">
+                <mat-radio-group class="filter-bar-wrapper-group-radio-group">
+                    <mat-radio-button *ngFor="let visualizationOption of visualizationOptions" class="filter-bar-wrapper-group-radio-group-button" [value]="visualizationOption.type" [checked]="selectedVisualization === visualizationOption.type" (click)="visualizationChanged(visualizationOption.type)">{{visualizationOption.text}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="filter-bar-wrapper-group">
+            <div class="filter-bar-wrapper-group-label">
+                Period:
+            </div>
+            <div class="filter-bar-wrapper-group-radio">
+                <mat-radio-group class="filter-bar-wrapper-group-radio-group">
+                    <mat-radio-button *ngFor="let periodOption of periodOptions" class="filter-bar-wrapper-group-radio-group-button" [value]="periodOption.type" [checked]="selectedPeriod === periodOption.type" (click)="periodChanged(periodOption.type)">{{periodOption.text}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="filter-bar-wrapper-group">
+            <div class="filter-bar-wrapper-group-wrapper">
+                <div class="filter-bar-wrapper-group-row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Year:</mat-label>
+                        <input type="number" placeholder="Pick year" matInput [value]="selectedYear" min="2000" max="2024" (change)="yearChanged($event)">
+                    </mat-form-field>
+                </div>
+                <div *ngIf="selectedPeriod === periods.Month" class="filter-bar-wrapper-group-row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Month:</mat-label>
+                        <input type="number" placeholder="Pick month" matInput [value]="selectedMonth" min="1" max="12" (change)="monthChanged($event)">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

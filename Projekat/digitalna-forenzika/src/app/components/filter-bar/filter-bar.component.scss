@@ -1,0 +1,40 @@
+.filter-bar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+
+    &-wrapper{
+        display: flex;
+        flex-direction: row;
+        column-gap: 100px;
+
+        &-group{
+            display: flex;
+            flex-direction: column;
+
+            &-label{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &-radio{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &-group{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            &-wrapper{
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+            }
+        }
+    }
+}
